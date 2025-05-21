@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ggpgtk4ze-go-gitops
+  description: This is GitOps manifest for ggpgtk4ze-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=ggpgtk4ze-go
+    backstage.io/kubernetes-id: ggpgtk4ze-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ggpgtk4ze-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ggpgtk4ze-go
